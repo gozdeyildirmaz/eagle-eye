@@ -1,0 +1,16 @@
+<div *ngIf="cameraInfo">
+  <div>name: {{cameraInfo.name}}</div>
+  <div>ethMacAddress: {{cameraInfo.ethMacAddress}}</div>
+</div>
+<div *ngIf="cameraStatus">
+  <div>status: {{cameraStatus.online ? 'online' : 'offline'}}</div>
+</div>
+<div *ngIf="cameraBrand">
+  <div>brand: {{cameraBrand.brand}}</div>
+  <div>model: {{cameraBrand.model}}</div>
+</div>
+<div *ngIf="cameraLocation">
+  <div>latitude: {{cameraLocation.latitude}}</div>
+  <div>longitude: {{cameraLocation.longitude}}</div>
+  <div>timeZone: {{cameraLocation.timeZone}}</div>
+</div>
