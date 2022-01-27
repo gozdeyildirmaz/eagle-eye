@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -10,27 +10,36 @@ import {
 
 import {Router} from '@angular/router';
 import {throwError} from 'rxjs';
-import {TokenService} from '../app/modules/camera/services/token.service';
+import {TokenService} from '../services/token.service';
 import {catchError, map} from 'rxjs/operators';
-import {AuthService} from '../app/modules/camera/services/auth.service';
-import { Observable } from 'rxjs';
+import {AuthService} from '../services/auth.service';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
+  api_key = 'dev_test'
+  secret = '3H1Bf6mCctIgpCuzvrnyekf3VhAUEnKJ'
 
-  constructor(  private router: Router,
-                private tokenService: TokenService,
-                private authService: AuthService) {}
+  constructor(private router: Router,
+              private tokenService: TokenService,
+              private authService: AuthService) {
+  }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): any {
 
     const token = this.tokenService.getToken();
     const refreshToken = this.tokenService.getRefreshToken();
-debugger;
+    debugger;
     if (token) {
       request = request.clone({
         setHeaders: {
           Authorization: 'Bearer ' + token
+        }
+      });
+    } else {
+      request = request.clone({
+        setHeaders: {
+          Authorization: 'Basic ' + btoa(this.api_key + ':' + this.secret)
         }
       });
     }
@@ -53,20 +62,6 @@ debugger;
           console.log('event--->>>', event);
         }
         return event;
-      }),
-      catchError((error: HttpErrorResponse) => {
-        console.log(error.error.error);
-        // if (error.status === 401) {
-        //   if (error.error.error === 'invalid_token') {
-        //     this.authService.refreshToken({refresh_token: refreshToken})
-        //       .subscribe(() => {
-        //         location.reload();
-        //       });
-        //   } else {
-        //     this.router.navigate(['login']).then(_ => console.log('redirect to login'));
-        //   }
-        // }
-        return throwError(error);
       }));
   }
 }

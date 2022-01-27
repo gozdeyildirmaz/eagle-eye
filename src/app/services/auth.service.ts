@@ -51,7 +51,7 @@ export class AuthService {
       .set('grant_type', 'password')
       .set('scope', 'write');
 
-    let url = this.base_url + this.token_url  + '?username=' + this.username + '&password=' +this.password
+    let url = this.base_url + this.token_url  + '?username=' + loginData.email + '&password=' +loginData.password
 debugger;
     return this.http.post<any>(url, body, this.HTTP_OPTIONS)
       .pipe(

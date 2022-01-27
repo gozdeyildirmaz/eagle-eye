@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CameraService} from "../../services/camera.service";
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../../../services/auth.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-camera-list',
@@ -10,7 +11,7 @@ import {AuthService} from "../../services/auth.service";
 export class CameraListComponent implements OnInit {
   cameraList: any;
 
-  constructor(private cameraService: CameraService, private auth: AuthService) {
+  constructor(private cameraService: CameraService, private auth: AuthService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -25,11 +26,7 @@ export class CameraListComponent implements OnInit {
   }
 
 
-  getAuthServiceLogin() {
-    this.auth.login({}).subscribe((x: any) => {
-      debugger;
-      console.log(x);
-    })
-  }
+
+
 
 }

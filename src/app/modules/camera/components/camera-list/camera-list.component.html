@@ -2,11 +2,12 @@
 
 <!--<button (click)="getTokenByCode()">Token by Code</button>-->
 <!--<button (click)="getTokenByPassword()">Token by Password</button>-->
-<button (click)="getCamera()">Get List</button>
-<button (click)="getAuthServiceLogin()">Auth service login</button>
+<!--<button (click)="getCamera()">Get List</button>-->
+<!--<button (click)="getAuthServiceLogin()">Auth service login</button>-->
 <br>
 <br>
 <br>
-<div *ngFor="let camera of cameraList" [routerLink]="['../camera-detail/'+ camera.cameraId]">
+<div *ngFor="let camera of cameraList" [routerLink]="['cameradetail/' + camera.cameraId]" >
   {{camera.name}}
 </div>
+
