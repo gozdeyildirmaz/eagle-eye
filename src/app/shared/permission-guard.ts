@@ -14,7 +14,6 @@ export class PermissionGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const result = !!this.tokenServive.getToken()
-    debugger;
     if(!result)
       this.router.navigateByUrl('/login');
 

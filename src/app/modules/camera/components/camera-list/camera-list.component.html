@@ -11,3 +11,7 @@
   {{camera.name}}
 </div>
 
+<div *ngFor="let camera of list$ | async" [routerLink]="['cameradetail/' + camera.cameraId]" >
+  {{camera.name}}
+</div>
+

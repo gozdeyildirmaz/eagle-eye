@@ -52,7 +52,6 @@ export class AuthService {
       .set('scope', 'write');
 
     let url = this.base_url + this.token_url  + '?username=' + loginData.email + '&password=' +loginData.password
-debugger;
     return this.http.post<any>(url, body, this.HTTP_OPTIONS)
       .pipe(
         tap((res: any) => {

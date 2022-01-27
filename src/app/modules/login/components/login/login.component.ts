@@ -48,11 +48,9 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.auth.login({email: this.userRegistrationForm.controls['email'].value, password: this.userRegistrationForm.controls['password'].value}).subscribe((x: any) => {
-      debugger;
       console.log(x);
       this.router.navigate(['/camera'])
     },(err)=>{
-      debugger;
       let snackBarRef = this.snackBar.open('Wrong email or wrong password!');
     })
   }

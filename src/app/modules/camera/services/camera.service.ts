@@ -16,7 +16,6 @@ export class CameraService {
 
 
   getCameras() {
-
     const url = 'http://rest.cameramanager.com/rest/v2.4/cameras';
 
     const headers = new HttpHeaders()
