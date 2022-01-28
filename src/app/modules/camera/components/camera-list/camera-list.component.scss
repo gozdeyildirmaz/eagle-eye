@@ -1,4 +1,4 @@
-.page-container{
+.page-container {
   width: 100%;
   //height:-webkit-fill-available;
   background-image: url(/assets/images/bg1.jpg);
@@ -6,14 +6,17 @@
   flex-direction: column;
   min-height: calc(100% - 57px);
 
-  .entrace{
+
+
+
+  .entrace {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px 0px 20px 0px;
     font-family: 'Arimo', sans-serif;
 
-    & span{
+    & span {
       display: inline-block;
       color: #777777;
       font-size: 16px;
@@ -22,7 +25,7 @@
       margin-bottom: 15px;
     }
 
-    & h2{
+    & h2 {
       font-family: 'Montserrat', sans-serif;
       color: #222222;
       font-size: 36px;
@@ -35,23 +38,24 @@
     }
   }
 
-  .cards-container{
+  .cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     overflow: hidden;
+
     .card-wraper {
 
       padding: 0px 15px;
       box-sizing: border-box;
-      margin:0px 20px;
+      margin: 0px 20px;
       width: 400px;
 
-      @media  (max-width: 750px){
+      @media (max-width: 750px) {
         width: 280px;
       }
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
 
@@ -80,7 +84,8 @@
           margin-bottom: 37px;
           height: 500px;
           overflow: hidden;
-          &>img{
+
+          & > img {
             z-index: 1;
             position: absolute;
           }
@@ -113,20 +118,22 @@
             transform: translateX(-100%);
             transition-duration: 500ms;
 
-            &>h2{
+            & > h2 {
               color: #ffffff;
               font-size: 24px;
               line-height: 36px;
               margin-bottom: 32px;
               font-family: 'Montserrat', sans-serif;
             }
-            & .detail{
+
+            & .detail {
               display: flex;
               flex-direction: column;
               color: #ffffff;
               font-size: 16px;
               line-height: 30px;
-              & span{
+
+              & span {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -147,13 +154,14 @@
             left: 100%;
             top: 23px;
           }
-          & img{
+
+          & img {
             width: 350px;
             height: 100%;
           }
         }
 
-        .video-post-info  a{
+        .video-post-info a {
           color: black;
           text-decoration: none;
           font-size: 22px;
