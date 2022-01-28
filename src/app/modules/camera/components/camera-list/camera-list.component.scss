@@ -1,0 +1,174 @@
+.page-container{
+  width: 100%;
+  //height:-webkit-fill-available;
+  background-image: url(/assets/images/bg1.jpg);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 57px);
+
+  .entrace{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px 20px 0px;
+    font-family: 'Arimo', sans-serif;
+
+    & span{
+      display: inline-block;
+      color: #777777;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    & h2{
+      font-family: 'Montserrat', sans-serif;
+      color: #222222;
+      font-size: 36px;
+      text-transform: capitalize;
+      position: relative;
+      padding-bottom: 10px;
+      font-weight: 600;
+      text-align: center;
+
+    }
+  }
+
+  .cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    .card-wraper {
+
+      padding: 0px 15px;
+      box-sizing: border-box;
+      margin:0px 20px;
+      width: 400px;
+
+      @media  (max-width: 750px){
+        width: 280px;
+      }
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      .video-post {
+
+        &:hover {
+          .video-post-thumbnail:before {
+            transition-duration: 500ms;
+            background-color: #f7941d;
+            background-image: inherit;
+          }
+
+
+          .vid-post-info {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition-duration: 500ms;
+            z-index: 3;
+          }
+        }
+
+        .video-post-thumbnail {
+          position: relative;
+          padding: 20px 20px 0 0;
+          margin-bottom: 37px;
+          height: 500px;
+          overflow: hidden;
+          &>img{
+            z-index: 1;
+            position: absolute;
+          }
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            //background-image: url(./src/assets/images/cam-fence.png);
+            background-image: url(/assets/images/cam-fence.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 0;
+            transition-duration: 500ms;
+          }
+
+          .vid-post-info {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            padding: 60px 0 0 40px;
+            background-color: rgba(0, 0, 0, 0.80);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-100%);
+            transition-duration: 500ms;
+
+            &>h2{
+              color: #ffffff;
+              font-size: 24px;
+              line-height: 36px;
+              margin-bottom: 32px;
+              font-family: 'Montserrat', sans-serif;
+            }
+            & .detail{
+              display: flex;
+              flex-direction: column;
+              color: #ffffff;
+              font-size: 16px;
+              line-height: 30px;
+              & span{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-family: 'Arimo', sans-serif;
+              }
+            }
+          }
+
+          .vid-post-info:before {
+            position: absolute;
+            height: 100%;
+            width: 50px;
+            transform: skew(0,
+              42deg
+            );
+            background: rgba(0, 0, 0, 0.80);
+            content: "";
+            left: 100%;
+            top: 23px;
+          }
+          & img{
+            width: 350px;
+            height: 100%;
+          }
+        }
+
+        .video-post-info  a{
+          color: black;
+          text-decoration: none;
+          font-size: 22px;
+          font-weight: 600;
+          font-family: 'Montserrat', sans-serif;
+        }
+      }
+
+
+    }
+  }
+}
+
+
+
+
+
+

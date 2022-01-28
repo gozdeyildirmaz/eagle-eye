@@ -1,17 +1,41 @@
-<p>camera-list works!</p>
+<div class="page-container">
+  <div class="entrace">
+    <span>WHAT WE OFFER</span>
+    <h2>
+      Smart Video Surveillance Systems
+    </h2>
+  </div>
+  <div class="cards-container">
+    <div *ngFor="let camera of cameraList; index as i" [routerLink]="['cameradetail/' + camera.cameraId]">
+      <div class="card-wraper" data-slick-index="0" aria-hidden="false" style="width: 400px;">
+        <div class="video-post">
+          <div class="video-post-thumbnail">
+            <img [src]="'assets/images/cam' + i%3 + '.jpg'" alt="">
+            <div class="vid-post-info">
+              <h2>{{camera.name}}</h2>
 
-<!--<button (click)="getTokenByCode()">Token by Code</button>-->
-<!--<button (click)="getTokenByPassword()">Token by Password</button>-->
-<!--<button (click)="getCamera()">Get List</button>-->
-<!--<button (click)="getAuthServiceLogin()">Auth service login</button>-->
-<br>
-<br>
-<br>
-<div *ngFor="let camera of cameraList" [routerLink]="['cameradetail/' + camera.cameraId]" >
-  {{camera.name}}
+              <div class="detail">
+                <span>accountId : {{camera.accountId}}</span>
+                <span>cameraId : {{camera.cameraId}}</span>
+                <span>deviceTypeId : {{camera.deviceTypeId}}</span>
+                <span>ethMacAddress : {{camera.ethMacAddress}}</span>
+                <span>zoneId : {{camera.zoneId}}</span>
+              </div>
+            </div>
+            <a href="services.html" title="" class="ext-link"></a>
+          </div><!--video-post-thumbnail end-->
+          <div class="video-post-info">
+            <!--          <a href="#" title="" class="rd-btn"><i class="fa fa-angle-double-right"></i></a>-->
+            <h2><a href="#" title="">{{camera.name}}</a></h2>
+          </div>
+        </div><!--video-post end-->
+      </div>
+
+      <!--  {{camera.name}}-->
+    </div>
+  </div>
+
 </div>
 
-<div *ngFor="let camera of list$ | async" [routerLink]="['cameradetail/' + camera.cameraId]" >
-  {{camera.name}}
-</div>
+
 

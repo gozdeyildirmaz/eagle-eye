@@ -1,16 +1,34 @@
-<div *ngIf="cameraInfo">
-  <div>name: {{cameraInfo.name}}</div>
-  <div>ethMacAddress: {{cameraInfo.ethMacAddress}}</div>
+<div class="detail">
+  <div class="row">
+    <div class="left">
+      <h3>Details of Accessories</h3>
+      <div class="features">
+        <span *ngIf="cameraInfo">Name: {{cameraInfo.name}}</span>
+        <span *ngIf="cameraInfo">EthMacAddress: {{cameraInfo.ethMacAddress}}</span>
+        <span *ngIf="cameraStatus">Status: {{cameraStatus.online ? 'online' : 'offline'}}</span>
+        <span *ngIf="cameraBrand">Brand: {{cameraBrand.brand}}</span>
+        <span *ngIf="cameraBrand">Model: {{cameraBrand.model}}</span>
+        <span *ngIf="cameraLocation">Latitude: {{cameraLocation.latitude || '-'}}</span>
+        <span *ngIf="cameraLocation">Longitude: {{cameraLocation.longitude || '-'}}</span>
+        <span *ngIf="cameraLocation">TimeZone: {{cameraLocation.timeZone || '-'}}</span>
+      </div>
+    </div>
+    <div class="right">
+      <img src="assets/images/cam-detail.jpg" alt="" class="align-right img-fluid">
+    </div>
+  </div>
 </div>
-<div *ngIf="cameraStatus">
-  <div>status: {{cameraStatus.online ? 'online' : 'offline'}}</div>
+<div class="legent">
+  <img [src]="'assets/images/logo1.png'">
+  <img [src]="'assets/images/logo2.png'">
+  <img [src]="'assets/images/logo3.png'">
+  <img [src]="'assets/images/logo4.png'">
+
 </div>
-<div *ngIf="cameraBrand">
-  <div>brand: {{cameraBrand.brand}}</div>
-  <div>model: {{cameraBrand.model}}</div>
-</div>
-<div *ngIf="cameraLocation">
-  <div>latitude: {{cameraLocation.latitude}}</div>
-  <div>longitude: {{cameraLocation.longitude}}</div>
-  <div>timeZone: {{cameraLocation.timeZone}}</div>
-</div>
+
+
+
+
+
+
+

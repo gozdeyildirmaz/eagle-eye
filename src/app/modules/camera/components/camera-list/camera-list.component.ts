@@ -17,7 +17,6 @@ import {selectFeatureCameras} from "../../state-management/selectors";
 })
 export class CameraListComponent implements OnInit {
   cameraList: any;
-  list$;
 
   constructor(private cameraService: CameraService, private auth: AuthService, private router: Router, private route: ActivatedRoute,private store: Store<AppState>) {
 
